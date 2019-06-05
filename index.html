@@ -28,7 +28,7 @@
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
-
+<h1 id="bigOne"> </h1>
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -42,6 +42,10 @@
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+  var bigOne = document.getElementByID('bigOne');
+  var dbRef = firebase.database().ref().child('text');
+  dbRef.on('value', snap => bigOne.innerText = snap.val());
 </script>
 </body>
 </html>
